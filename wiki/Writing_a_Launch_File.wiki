@@ -62,4 +62,10 @@ While each EPOS has its parameters, the EposManager has parameters of its own. S
 
 *Publish_Rate:* The rate in Hz that the EposManager will publish motor information. This information includes, among other things, position, velocity, current, and motor state. While this value can be set as high as the user wishes, in reality, a single EPOS can only communicate at about 50 Hz. As more are added to a chain, this decreases linearly (2 EPOS's have a limit of 25 Hz, 3 a limit of around 17 Hz, etc).
 
+== Running the Launch File ==
+Once you have written the launch file and modified the EposManager Parameters to suit your needs, you can now launch it. Open up a terminal and type:
+{{{
+roslaunch epos_tutorials MyMotorTest.launch
+}}}
 
+Assuming everything went well, you should see the following output:
