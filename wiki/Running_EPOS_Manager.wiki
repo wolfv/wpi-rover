@@ -18,6 +18,7 @@ Rather than rewrite code every time a new or different motor is to be used, Epos
 To create a parameter file for your motor, make a new directory called "params" and copy the sample file below into MyEpos.yaml. 
 
 {{{
+# IDENTITY PARAMETERS
 Node_ID: 1
 Motor_Name: Test_Motor
 
@@ -42,13 +43,6 @@ Max_Following_Error: 20000   # MAX POS FOLLOWING ERROR, ENC COUNTS
 Max_Profile_Velocity: 12500  # MAX PROFILE VELOCITY
 Max_Acceleration: 15000      # MAX ACCELERATION
 
-# MODE SEPECIFIC PARAMETERS
-Position_Profile_Velocity: 12500     # VELOCITY FOR POS PROFILE MODE
-Position_Profile_Acceleration: 8000  # ACCELERATION FOR POS PROFILE MODE
-Position_Profile_Deceleration: 14000 # DECELERATION FOR POS PROFILE MODE
-Velocity_Profile_Acceleration: 8000  # ACCELERATION FOR VEL PROFILE MODE
-Velocity_Profile_Deceleration: 9000  # DECELERATION FOR VEL PROFILE MODE
-
 #PID PARAMETERS
 PositionPGain : 0  # P GAIN FOR POSITION CONTROL
 PositionIGain : 0  # I GAIN FOR POSITION CONTROL
@@ -57,6 +51,13 @@ VelocityPGain : 0  # P GAIN FOR VELOCITY CONTROL
 VelocityIGain : 0  # I GAIN FOR VELOCITY CONTROL
 CurrentPGain  : 0  # P GAIN FOR CURRENT CONTROL
 CurrentIGain  : 0  # I GAIN FOR CURRENT CONTROL
+
+# MODE SEPECIFIC PARAMETERS
+Position_Profile_Velocity: 12500     # VELOCITY FOR POS PROFILE MODE
+Position_Profile_Acceleration: 8000  # ACCELERATION FOR POS PROFILE MODE
+Position_Profile_Deceleration: 14000 # DECELERATION FOR POS PROFILE MODE
+Velocity_Profile_Acceleration: 8000  # ACCELERATION FOR VEL PROFILE MODE
+Velocity_Profile_Deceleration: 9000  # DECELERATION FOR VEL PROFILE MODE
 
 }}}
 
@@ -67,4 +68,73 @@ will use the corresponding parameter that is already on the EPOS. A warning thou
 
 Below, we will discuss what each parameter is and how they should be used.
 
-===
+=== Identity Parameters ===
+Identity parameters are used to identify what motor is what. The EposManager itself does this through Node_ID, which is why it is a required input. The Motor_Name simply makes it easier for the user to identify what motor is what.
+
+*Node_ID:* 
+
+*Motor_Name:*
+
+=== Motor Parameters ===
+
+*Motor_Type:*
+
+*Motor_Nominal_Current:*
+
+*Motor_Max_Current:*
+
+*Motor_Thermal_Time_Constant:*
+
+*Motor_Number_Pole_Pairs:*
+
+=== Sensor Parameters ===
+
+*Sensor_Type:*
+
+*Sensor_Inversion:*
+
+*Encoder_Resolution:*
+
+*Encoder_Data_Rate:*
+
+*Encoder_Number_Multiturn_Bits:*
+
+*Encoder_Number_Single_Turn_Bits:*
+
+=== Safety Parameters ===
+
+*Max_Following_Error:* 
+
+*Max_Profile_Velocity:*
+
+*Max_Acceleration:*   
+
+=== PID Parameters ===
+*PositionPGain:*
+
+*PositionIGain:*
+
+*PositionDGain:*
+
+*VelocityPGain:*
+
+*VelocityIGain:*
+
+*CurrentPGain:*
+
+*CurrentIGain:*
+
+=== Mode Specific Parameters ===
+*Position_Profile_Velocity:*
+
+*Position_Profile_Acceleration:*
+
+*Position_Profile_Deceleration:*
+
+*Velocity_Profile_Acceleration:*
+
+*Velocity_Profile_Deceleration:*
+
+
+
+ 
