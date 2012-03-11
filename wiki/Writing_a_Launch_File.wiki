@@ -3,7 +3,7 @@
 = Writing a Launch File =
 While it is possible to run the EposManager from the command line through rosrun, the easiest way by far is from a launch file. Here, you will learn how to write a launch file to control any number of EPOS' in a chain.
 
-Assuming you have already followed the previous tutorials and created your parameter files, create a new directory called "launch". In the directory, create a new launch file named "`MyMotorTest.launch`." Finally, copy the sample launch file below into "`MyMotorTest.launch`."
+Assuming you have already followed the previous tutorials and created your parameter files, create a new directory called "launch". In the directory, create a new launch file named "`MyMotorTest.launch`" and copy the sample launch file below into it.
 
 == Sample Launch File ==
 {{{
