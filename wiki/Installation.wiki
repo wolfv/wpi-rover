@@ -1,13 +1,24 @@
 #summary Installing EposManager on your computer
 
-= Introduction =
+= Installing EposManager =
 
 EposManager is still actively being developed. While most of the changes are likely to be minor, we will add new features if they are requested. For this reason, EposManager must be installed from source.
 
+== Checking out the Source Code ==
 
-= Details =
+You can checkout EposManager into a directory in your ROS_PACKAGE_PATH through the following command:
 
-Add your content here.  Format your content with:
-  * Text in *bold* or _italic_
-  * Headings, paragraphs, and lists
-  * Automatic links to other wiki pages
+`svn checkout http://wpi-rover.googlecode.com/svn/trunk/EposManager`
+
+== Linking the required libraries ==
+
+EposManager requires two external libraries in order to function: one for the FTDI chip in the EPOS, and the other for the Maxon's EPOS Library. Both of these can be found in the EposManager package under the "libs" directory. Below are the steps required to successfully install and link the required libraries.
+
+=== Linking the FTDI library ===
+The EPOS uses an FTDI chip to communicate between the computer and the micro-controller. Unfortunately, the FTDI library is an older non-standard version library. Fortunately, we have not found any conflicts that occur from the installation of the FTDI driver. To install the FTDI drivers:
+
+ # `roscd EposManager/libs`
+ # `sudo cp libftd2xx.so /usr/local/lib`
+ # `sudo cp libftd2xx.so /usr/lib`
+ # `sudo cp 99-ftdi.rules /etc/udev/rules.d`
+ # `sudo /etc/init.d/udev restart`
