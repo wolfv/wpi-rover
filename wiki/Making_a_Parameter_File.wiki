@@ -61,71 +61,71 @@ will use the corresponding parameter that is already on the EPOS. A warning thou
 === Identity Parameters ===
 Identity parameters are used to identify what motor is what. The EposManager itself does this through Node_ID, which is why it is a required input. The Motor_Name simply makes it easier for the user to identify what motor is what.
 
-*Node_ID:* 
+*`Node_ID:`* 
 
-*Motor_Name:*
+*`Motor_Name:`*
 
 === Motor Parameters ===
 
-*Motor_Type:*
+*`Motor_Type:`*
 
-*Motor_Nominal_Current:*
+*`Motor_Nominal_Current:`*
 
-*Motor_Max_Current:*
+*`Motor_Max_Current:`*
 
-*Motor_Thermal_Time_Constant:*
+*`Motor_Thermal_Time_Constant:`*
 
-*Motor_Number_Pole_Pairs:*
+*`Motor_Number_Pole_Pairs:`*
 
 === Sensor Parameters ===
 
-*Sensor_Type:*
+*`Sensor_Type:`*
 
-*Sensor_Inversion:*
+*`Sensor_Inversion:`*
 
-*Encoder_Resolution:*
+*`Encoder_Resolution:`*
 
-*Encoder_Data_Rate:*
+*`Encoder_Data_Rate:`*
 
-*Encoder_Number_Multiturn_Bits:*
+*`Encoder_Number_Multiturn_Bits:*
 
-*Encoder_Number_Single_Turn_Bits:*
+*`Encoder_Number_Single_Turn_Bits:`*
 
 === Safety Parameters ===
 
-*Max_Following_Error:* 
+*`Max_Following_Error:`* 
 
-*Max_Profile_Velocity:*
+*`Max_Profile_Velocity:`*
 
-*Max_Acceleration:*   
+*`Max_Acceleration:`*   
 
 === PID Parameters ===
 
-*PositionPGain:*
+*`PositionPGain:`*
 
-*PositionIGain:*
+*`PositionIGain:`*
 
-*PositionDGain:*
+*`PositionDGain:`*
 
-*VelocityPGain:*
+*`VelocityPGain:`*
 
-*VelocityIGain:*
+*`VelocityIGain:`*
 
-*CurrentPGain:*
+*`CurrentPGain:`*
 
-*CurrentIGain:*
+*`CurrentIGain:`*
 
 === Mode Specific Parameters ===
 
-*Position_Profile_Velocity:*
+*`Position_Profile_Velocity:`*
 
-*Position_Profile_Acceleration:*
+*`Position_Profile_Acceleration:`*
 
-*Position_Profile_Deceleration:*
+*`Position_Profile_Deceleration:`*
 
-*Velocity_Profile_Acceleration:*
+*`Velocity_Profile_Acceleration:`*
 
-*Velocity_Profile_Deceleration:*
+*`Velocity_Profile_Deceleration:`*
 
 == Configuring the Parameter File for Your Motor ==
 Now that you know what each parameter is, you need to modify it to use your motor's parameters.
