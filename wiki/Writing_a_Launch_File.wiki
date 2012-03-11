@@ -56,11 +56,11 @@ This next portion runs an instance of the EposManager. Like every ROS node, the 
 
 While each EPOS has its parameters, the EposManager has parameters of its own. Shown above are the default values for each parameter; if you remove them it will work identically. It is still best that you specify them every time to make it easy to modify them in the future. Below, we will discuss what each parameter means.
 
-*Protocol:* This is the communications protocol used by the EPOS. The possible values are: USB , RS232, and CAN. All of these are case specific.
+*`Protocol`:* This is the communications protocol used by the EPOS. The possible values are: USB , RS232, and CAN. All of these are case specific.
 
-*Port:* This is the specific port that the EPOS is plugged in on. For USB, is is USB0, USB1, etc. ; for RS232 is it COM1, COM2, etc. ; and for CAN it is the name of the CAN method you are using.
+*`Port`:* This is the specific port that the EPOS is plugged in on. For USB, is is USB0, USB1, etc. ; for RS232 is it COM1, COM2, etc. ; and for CAN it is the name of the CAN method you are using.
 
-*Publish_Rate:* The rate in Hz that the EposManager will publish motor information. This information includes, among other things, position, velocity, current, and motor state. While this value can be set as high as the user wishes, in reality, a single EPOS can only communicate at about 50 Hz. As more are added to a chain, this decreases linearly (2 EPOS's have a limit of 25 Hz, 3 a limit of around 17 Hz, etc).
+*`Publish_Rate`:* The rate in Hz that the EposManager will publish motor information. This information includes, among other things, position, velocity, current, and motor state. While this value can be set as high as the user wishes, in reality, a single EPOS can only communicate at about 50 Hz. As more are added to a chain, this decreases linearly (2 EPOS's have a limit of 25 Hz, 3 a limit of around 17 Hz, etc).
 
 == Running the Launch File ==
 Once you have written the launch file and modified the EposManager Parameters to suit your needs, you can now launch it. Open up a terminal and type:
