@@ -1,0 +1,13 @@
+#summary Installing EposManager on your computer
+
+= Introduction =
+
+EposManager is still actively being developed. While most of the changes are likely to be minor, we will add new features if they are requested. For this reason, EposManager must be installed from source.
+
+
+= Details =
+
+Add your content here.  Format your content with:
+  * Text in *bold* or _italic_
+  * Headings, paragraphs, and lists
+  * Automatic links to other wiki pages
