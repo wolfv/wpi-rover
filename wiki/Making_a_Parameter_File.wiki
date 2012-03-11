@@ -87,7 +87,7 @@ Identity parameters are used to identify what motor is what. The EposManager its
 
 *`Encoder_Data_Rate:`*
 
-*`Encoder_Number_Multiturn_Bits:*
+*`Encoder_Number_Multiturn_Bits:`*
 
 *`Encoder_Number_Single_Turn_Bits:`*
 
