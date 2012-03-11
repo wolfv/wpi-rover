@@ -22,3 +22,5 @@ The EPOS uses an FTDI chip to communicate between the computer and the micro-con
  # `sudo cp libftd2xx.so /usr/lib`
  # `sudo cp 99-ftdi.rules /etc/udev/rules.d`
  # `sudo /etc/init.d/udev restart`
+
+=== Linking the EPOS Library ===
