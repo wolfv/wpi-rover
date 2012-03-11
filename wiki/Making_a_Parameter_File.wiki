@@ -126,3 +126,6 @@ Identity parameters are used to identify what motor is what. The EposManager its
 *Velocity_Profile_Acceleration:*
 
 *Velocity_Profile_Deceleration:*
+
+== Configuring the Parameter File for Your Motor ==
+Now that you know what each parameter is, you need to modify it to use your motor's parameters.
