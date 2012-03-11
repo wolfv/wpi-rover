@@ -5,6 +5,8 @@ Rather than rewrite code every time a new or different motor is to be used, Epos
 
 To create a parameter file for your motor, make a new directory called "params" and copy the sample file below into MyEpos.yaml. 
 
+== Sample Parameter File ==
+
 {{{
 # IDENTITY PARAMETERS
 Node_ID: 1
@@ -31,7 +33,7 @@ Max_Following_Error: 20000   # MAX POS FOLLOWING ERROR, ENC COUNTS
 Max_Profile_Velocity: 12500  # MAX PROFILE VELOCITY
 Max_Acceleration: 15000      # MAX ACCELERATION
 
-#PID PARAMETERS
+# PID PARAMETERS
 PositionPGain : 0  # P GAIN FOR POSITION CONTROL
 PositionIGain : 0  # I GAIN FOR POSITION CONTROL
 PositionDGain : 0  # D GAIN FOR POSITION CONTROL
@@ -51,10 +53,10 @@ Velocity_Profile_Deceleration: 9000  # DECELERATION FOR VEL PROFILE MODE
 
 It is unlikely that you will use the same parameter values for your specific motor, but you will use the same parameters names. The only parameter required for EposManager to run is Node_ID, but it is best to make sure that the motor, safety, sensor, and PID parameters for your motor are properly configured before you run it. 
 
-If you do not know any of the specific parameters, you can either consult h datasheet for that specific motor, or leave it blank. If it is left blank, it 
+If you do not know any of the specific parameters, you can either consult its datasheet for that specific motor, or leave it blank. If it is left blank, it 
 will use the corresponding parameter that is already on the EPOS. A warning though, this may result in a mismatch if parameters are incompatible with each other, so it is best to load as many parameters as possible each time. The only exception to this is PID parameters, which we will discuss later.
 
-Below, we will discuss what each parameter is and how they should be used.
+== Parameter Descriptions ==
 
 === Identity Parameters ===
 Identity parameters are used to identify what motor is what. The EposManager itself does this through Node_ID, which is why it is a required input. The Motor_Name simply makes it easier for the user to identify what motor is what.
@@ -98,6 +100,7 @@ Identity parameters are used to identify what motor is what. The EposManager its
 *Max_Acceleration:*   
 
 === PID Parameters ===
+
 *PositionPGain:*
 
 *PositionIGain:*
@@ -113,6 +116,7 @@ Identity parameters are used to identify what motor is what. The EposManager its
 *CurrentIGain:*
 
 === Mode Specific Parameters ===
+
 *Position_Profile_Velocity:*
 
 *Position_Profile_Acceleration:*
