@@ -36,7 +36,7 @@ portion of the line uses the ROS file-system to find the absolute path of the gi
 
 The namespace is specified by: 
 {{{
-"ns="motors/MyEpos
+ns="motors/MyEpos
 }}}
 The "motors" before the "MyEpos" is solely for organizational purposes, it can be removed or expanded. The "MyEpos" (or whatever name you wish to belong to each specific EPOS) is mandatory and must be unique. You cannot have two EPOS's in the same namespace or their parameters will overwrite each other.
 
