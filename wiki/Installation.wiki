@@ -31,3 +31,10 @@ To install the EPOS Command Library:
  # `roscd EposManager/libs`
  # `sudo cp libEPOS.so /opt/lib`
  # `sudo cp libEPOS.so /usr/lib`
+
+=== Building EposManager ===
+Once the required libraries are installed, it can now be built. Simply open up a terminal and type:
+
+`rosmake EposManager`
+
+Now you should be ready to move on to our tutorials.
