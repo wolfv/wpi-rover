@@ -21,4 +21,12 @@ Assuming you have already followed the previous tutorials and created your param
 </launch>
 }}}
 
+==The Launch File Explained ==
+While this launch file may look complicated, it is actually very simple and straightforward. Below is a breakdown of the code.
+
+{{{	
+<rosparam command="load" file="$(find epos_tutorials)/params/MyEpos.yaml" ns="motors/MyEpos" /> 
+}}}
+
+This line loads the parameters from the given parameter file into a specific namespace. The "`$(find epos_tutorials)`" portion of the line uses the ROS file-system to find the absolute path of the given package, in this case "epos_tutorials". From there, you specify the relative path to the parameter file you are loading into the namespace. The namespace is specified by "ns="motors/MyEpos". The "motors" before the "MyEpos" is solely for organizational purposes, it can be removed or expanded. The MyEpos (or whatever name you wish to belong to each specific EPOS) is mandatory and must be unique. You cannot have two EPOS's in the same namespace or their parameters will overwrite each other.
 
