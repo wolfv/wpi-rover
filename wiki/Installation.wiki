@@ -24,3 +24,10 @@ The EPOS uses an FTDI chip to communicate between the computer and the micro-con
  # `sudo /etc/init.d/udev restart`
 
 === Linking the EPOS Library ===
+The EPOS library is a modified version of Maxon's own libEposCmd. It is almost identical to libEposCmd. The only difference is the addition of a loop to resend a command if the first few tries fail. This is because we found that, on newer computer systems, it often takes multiple attempts to successfully send a command. While the user can implement this resending on a higher level (as we also do), relying on only this leads to a command delay of up to 500 milliseconds. Including a low level loop reduces this delay to less than a millisecond in most cases. If you do wish to use the unmodified EPOS library, it can be found HERE. The full documentation of the EPOS Command Library that we use can also be found HERE.
+
+To install the EPOS Command Library:
+
+ # `roscd EposManager/libs`
+ # `sudo cp libEPOS.so /opt/lib`
+ # `sudo cp libEPOS.so /usr/lib`
