@@ -1,0 +1,24 @@
+#summary How to write a launch file for your motor.
+
+= Writing a Launch File =
+While it is possible to run the EposManager from the command line through rosrun, the easiest way by far is from a launch file. Here, you will learn how to write a launch file to control any number of EPOS' in a chain.
+
+Assuming you have already followed the previous tutorials and created your parameter files, create a new directory called "launch". In the directory, create a new launch file named "MyMotorTest.launch". Finally, copy the sample launch file below into "MyMotorTest.launch".
+
+== Sample Launch File ==
+{{{
+<launch>
+	<rosparam command="load" file="$(find epos_tutorials)/params/MyEpos.yaml" ns="motors" />
+
+	<node name="NewEpos" pkg="EposManager" type="EposManager" args="MyEpos" ns="motors" output="screen" >
+		<param name="Port" value="USB0" />
+		<param name="Protocol" value="USB" />
+		<param name="Publish_Rate" value="10" />
+		<param name="Heartbeat" value="false" />
+		<param name="Max_Heartbeat_Attempts" value="20" />
+		<param name="Heartbeat_Rate" value="2" />
+	</node>
+</launch>
+}}}
+
+
