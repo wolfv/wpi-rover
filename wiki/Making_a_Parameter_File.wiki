@@ -1,7 +1,7 @@
-#summary Introduction on writing and using parameters files with EposManager
+#summary Introduction on writing and using parameters files with `EposManager`
 
 = Making a Parameter File =
-Rather than rewrite code every time a new or different motor is to be used, EposManager loads motor parameters from .YAML files. This allows the user to change the motor or EPOS parameters without ever having to recompile any code. Furthermore, based off of which parameters are given to EposManager, it can determine whether or not it needs to loading missing information from the EPOS. The user only needs to input the parameters they want to change. 
+Rather than rewrite code every time a new or different motor is to be used, `EposManager` loads motor parameters from .YAML files. This allows the user to change the motor or EPOS parameters without ever having to recompile any code. Furthermore, based off of which parameters are given to `EposManager`, it can determine whether or not it needs to loading missing information from the EPOS. The user only needs to input the parameters they want to change. 
 
 To create a parameter file for your motor, make a new directory called "params" and copy the sample file below into `MyEpos.yaml`. 
 
@@ -51,7 +51,7 @@ Velocity_Profile_Deceleration: 9000  # DECELERATION FOR VEL PROFILE MODE
 
 }}}
 
-It is unlikely that you will use the same parameter values for your specific motor, but you will use the same parameters names. The only parameter required for EposManager to run is Node_ID, but it is best to make sure that the motor, safety, sensor, and PID parameters for your motor are properly configured before you run it. 
+It is unlikely that you will use the same parameter values for your specific motor, but you will use the same parameters names. The only parameter required for `EposManager` to run is Node_ID, but it is best to make sure that the motor, safety, sensor, and PID parameters for your motor are properly configured before you run it. 
 
 If you do not know any of the specific parameters, you can either consult its datasheet for that specific motor, or leave it blank. If it is left blank, it 
 will use the corresponding parameter that is already on the EPOS. A warning though, this may result in a mismatch if parameters are incompatible with each other, so it is best to load as many parameters as possible each time. The only exception to this is PID parameters, which we will discuss later.
@@ -59,7 +59,7 @@ will use the corresponding parameter that is already on the EPOS. A warning thou
 == Parameter Descriptions ==
 
 === Identity Parameters ===
-Identity parameters are used to identify what motor is what. The EposManager itself does this through `Node_ID`, which is why it is a required input. The `Motor_Name` simply makes it easier for the user to identify what motor is what.
+Identity parameters are used to identify what motor is what. The `EposManager` itself does this through `Node_ID`, which is why it is a required input. The `Motor_Name` simply makes it easier for the user to identify what motor is what.
 
 *`Node_ID:`* 
 
