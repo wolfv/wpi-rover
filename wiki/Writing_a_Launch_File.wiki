@@ -8,7 +8,7 @@ Assuming you have already followed the previous tutorials and created your param
 == Sample Launch File ==
 {{{
 <launch>
-	<rosparam command="load" file="$(find epos_tutorials)/params/MyEpos.yaml" ns="motors" />
+	<rosparam command="load" file="$(find epos_tutorials)/params/MyEpos.yaml" ns="motors/MyEpos" />
 
 	<node name="NewEpos" pkg="EposManager" type="EposManager"  ns="motors" output="screen" args="MyEpos" >
 		<param name="Protocol" value="USB" />
