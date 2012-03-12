@@ -40,7 +40,7 @@ ns="motors/MyEpos
 }}}
 The "motors" before the "`MyEpos`" is solely for organizational purposes, it can be removed or expanded. The "`MyEpos`" (or whatever name you wish to belong to each specific EPOS) is mandatory and must be unique. You cannot have two EPOS's in the same namespace or their parameters will overwrite each other.
 
-=== EposManager Node ===
+=== `EposManager` Node ===
 {{{
 <node name="NewEpos" pkg="EposManager" type="EposManager" ns="motors" output="screen" args="MyEpos"  >
 }}}
