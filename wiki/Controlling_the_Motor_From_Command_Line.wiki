@@ -21,7 +21,7 @@ Note the two motor information topics available: "`Motor_Info`" and "`Group_Moto
 
 Because we are only dealing with a single motor though, they are functionally the same topic, and we will listen to the "`Motor_Info`" topic. To do this, run the following command in a terminal:
 {{{
-rostopic echo /motors/MyEpos
+rostopic echo /motors/Motor_Info
 }}}
 
 If you are getting an output, then the EPOS is successfully communicating with the computer and returning information to it. Try moving the motor and seeing if any of the values change.
@@ -44,7 +44,7 @@ This command will publish 1 message of `[message_type]` to `[topic_name]` tellin
 
 Suppose we want to run your motor at 4000 rpm. Open up a terminal and run:
 {{{
-rostopic pub -1 /motors/Motor_Control /EposManager/EPOSControl 1 1 4000
+rostopic pub -1 /motors/Motor_Control EposManager/EPOSControl 1 1 4000
 }}}
 
 If everything worked correctly, your motor should be moving at 4000 rpm. Note, that this is the motor velocity, not the output velocity. `EposManager` does not take into account the gearing of the motor.
