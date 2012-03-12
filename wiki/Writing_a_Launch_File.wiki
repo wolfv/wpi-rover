@@ -40,14 +40,14 @@ ns="motors/MyEpos
 }}}
 The "motors" before the "`MyEpos`" is solely for organizational purposes, it can be removed or expanded. The "`MyEpos`" (or whatever name you wish to belong to each specific EPOS) is mandatory and must be unique. You cannot have two EPOS's in the same namespace or their parameters will overwrite each other.
 
-=== `EposManager` Node ===
+=== EposManager Node ===
 {{{
 <node name="NewEpos" pkg="EposManager" type="EposManager" ns="motors" output="screen" args="MyEpos"  >
 }}}
 
 This next portion runs an instance of the `EposManager`. Like every ROS node, the name must be unique. In this case, we are only running one `EposManager`, so that is not an issue. We also give the `EposManager` a namespace through "ns". Just like the parameter loading above, this namespace can be lengthened or removed completely. The only requirement is that it be the exact same as the namespace used in the parameter loading portion of the file, minus the name of the specific EPOS (in this case `MyEpos`). The name of the specific EPOS needs to be given in the "args=" argument. This is done so `EposManager` knows where to search for the parameters for the EPOS it is using. While we are only using one EPOS in this example, you can pass in as many EPOS as you wish, so long as each one has an associated parameter file. We will discuss using multiple EPOS in a later tutorial.
 
-=== `EposManager` Parameters ===
+=== EposManager Parameters ===
 {{{
 <param name="Protocol" value="USB" />
 <param name="Port" value="USB0" />
