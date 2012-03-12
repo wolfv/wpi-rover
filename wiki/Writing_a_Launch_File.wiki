@@ -1,7 +1,7 @@
 #summary How to write a launch file for your motor.
 
 = Writing a Launch File =
-While it is possible to run the `EposManager` from the command line through rosrun, the easiest way by far is from a launch file. Here, you will learn how to write a launch file to control any number of `EPOS` in a chain.
+While it is possible to run the `EposManager` from the command line through rosrun, the easiest way by far is from a launch file. Here, you will learn how to write a launch file to control any number of EPOS in a chain.
 
 Assuming you have already followed the previous tutorials and created your parameter files, create a new directory called "launch". In the directory, create a new launch file named "`MyMotorTest.launch`" and copy the sample launch file below into it.
 
@@ -38,7 +38,7 @@ The namespace is specified by:
 {{{
 ns="motors/MyEpos
 }}}
-The "motors" before the "MyEpos" is solely for organizational purposes, it can be removed or expanded. The "MyEpos" (or whatever name you wish to belong to each specific EPOS) is mandatory and must be unique. You cannot have two EPOS's in the same namespace or their parameters will overwrite each other.
+The "motors" before the "`MyEpos`" is solely for organizational purposes, it can be removed or expanded. The "`MyEpos`" (or whatever name you wish to belong to each specific EPOS) is mandatory and must be unique. You cannot have two EPOS's in the same namespace or their parameters will overwrite each other.
 
 === EposManager Node ===
 {{{
