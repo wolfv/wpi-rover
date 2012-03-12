@@ -1,12 +1,12 @@
-#summary Installing EposManager on your computer
+#summary Installing `EposManager` on your computer
 
 = Installing EposManager =
 
-EposManager is still actively being developed. While most of the changes are likely to be minor, we will add new features if they are requested. For this reason, EposManager must be installed from source.
+`EposManager` is still actively being developed. While most of the changes are likely to be minor, we will add new features if they are requested. For this reason, `EposManager` must be installed from source.
 
 == Checking out the Source Code ==
 
-You can checkout EposManager into a directory in your ROS_PACKAGE_PATH through the following command:
+You can checkout `EposManager` into a directory in your ROS_PACKAGE_PATH through the following command:
 
 `svn checkout http://wpi-rover.googlecode.com/svn/trunk/EposManager`
 
