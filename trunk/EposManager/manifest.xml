@@ -1,0 +1,16 @@
+<package>
+  <description brief="EposManager">
+
+     EposManager
+
+  </description>
+  <author>oryx</author>
+  <license>BSD</license>
+  <review status="unreviewed" notes=""/>
+  <url>http://ros.org/wiki/EposManager</url>
+  <depend package="roscpp"/>
+  <depend package="dynamic_reconfigure"/>
+
+</package>
+
+
