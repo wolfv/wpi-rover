@@ -2,10 +2,10 @@
 
 = Controlling the Motor From the Command Line =
 
-If you have completed the previous tutorials, you should have successfully launch the EposManager and initialized an EPOS with your specific parameters. Now, you are ready to receive information from and control the EPOS. 
+If you have completed the previous tutorials, you should have successfully launch the `EposManager` and initialized an EPOS with your specific parameters. Now, you are ready to receive information from and control the EPOS. 
 
 == Receiving Motor Information ==
-The easiest way to check to make sure EposManager is successfully running is to listen to the motor information it returns. Open up a terminal and run:
+The easiest way to check to make sure `EposManager` is successfully running is to listen to the motor information it returns. Open up a terminal and run:
 {{{
 rostopic list
 }}}
@@ -47,4 +47,4 @@ Suppose we want to run your motor at 4000 rpm. Open up a terminal and run:
 rostopic pub -1 /motors/Motor_Control /EposManager/EPOSControl 1 1 4000
 }}}
 
-If everything worked correctly, your motor should be moving at 4000 rpm. Note, that this is the motor velocity, not the output velocity. EposManager does not take into account the gearing of the motor.
+If everything worked correctly, your motor should be moving at 4000 rpm. Note, that this is the motor velocity, not the output velocity. `EposManager` does not take into account the gearing of the motor.
