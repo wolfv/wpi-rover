@@ -34,13 +34,13 @@ To drive the motor, we are going to use rostopic pub. The syntax for sending a s
 rostopic pub -1 /topic_name /message_type [node_id] [control_mode] [setpoint]
 }}}
 
-This command will publish 1 message of [message_type] to [topic_name] telling [node_id] to move to either move with [setpoint] velocity or to [setpoint] position depending upon [control_mode]. The valid control modes and there corresponding value are:
+This command will publish 1 message of `[message_type]` to `[topic_name]` telling `[node_id]` to move to either move with `[setpoint]` velocity or to `[setpoint]` position depending upon `[control_mode]`. The valid control modes and there corresponding value are:
 
- # *`Velocity:`* Sets the motor to [setpoint] velocity in rpm at the motor.
- # *`Absolute Position:`* Tells the motor to go to [setpoint] encoder counts after completing any previous position command.
- # *`Absolute Position Immediate:`* Tells the motor to go to [setpoint] encoder counts immediately.
- # *`Relative Position:`* Tells the motor to move [setpoint] encoder counts, relative to its current position, after completing any previous position command.
- # *`Relative Position Immediate:`* Tells the motor to move [setpoint] encoder counts, relative to its current position, immediately.
+ # *`Velocity:`* Sets the motor to `[setpoint]` velocity in rpm at the motor.
+ # *`Absolute Position:`* Tells the motor to go to `[setpoint]` encoder counts after completing any previous position command.
+ # *`Absolute Position Immediate:`* Tells the motor to go to `[setpoint]` encoder counts immediately.
+ # *`Relative Position:`* Tells the motor to move `[setpoint]` encoder counts, relative to its current position, after completing any previous position command.
+ # *`Relative Position Immediate:`* Tells the motor to move `[setpoint]` encoder counts, relative to its current position, immediately.
 
 Suppose we want to run your motor at 4000 rpm. Open up a terminal and run:
 {{{
