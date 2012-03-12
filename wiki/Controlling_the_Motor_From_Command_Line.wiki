@@ -1,0 +1,27 @@
+#summary Information on how to control the motor from the command line
+
+= Controlling the Motor From the Command Line =
+
+If you have completed the previous tutorials, you should have successfully launch the EposManager and initialized an EPOS with your specific parameters. Now, you are ready to receive information from and control the EPOS. 
+
+== Receiving Motor Information ==
+The easiest way to check to make sure EposManager is successfully running is to listen to the motor information it returns. Open up a terminal and run:
+{{{
+rostopic list
+}}}
+
+This should show a list of all available topics and, assuming you ran the launch file in the previous tutorial, should look something like this:
+{{{
+...
+...
+...
+...
+}}}
+Note the two motor information topics available: "`Motor_Info`" and "`Group_Motor_Info`". Both of these publish the same information, just in a different way. The "`Motor_Info`" topic will publish each `MotorInfo` message separately, while "`Group_Motor_Info`" adds each `MotorInfo` message to a variable length array and publishes them together. The "`Group_Motor_Info`" is most useful with Odometry, when a subscribing callback needs to know each motors position or velocity at a single call rather than in multiple ones. 
+
+Because we are only dealing with a single motor though, they are functionally the same topic, and we will listen to the "`Motor_Info`" topic. To do this, run the following command in a terminal:
+{{{
+rostopic echo /motors/MyEpos
+}}}
+
+If you are getting an output, then the EPOS is successfully communicating with the computer and returning information to it. Try moving the motor and seeing if any of the values change.
