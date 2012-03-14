@@ -1,4 +1,4 @@
-#summary Installing `EposManager` on your computer
+#summary Installing EposManager on your computer
 
 = Installing EposManager =
 
