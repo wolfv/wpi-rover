@@ -12,9 +12,12 @@ rostopic list
 
 This should show a list of all available topics and, assuming you ran the launch file in the previous tutorial, should look something like this:
 {{{
-...
-...
-...
+/rosout
+/rosout_agg
+/motors/Motor_Info
+/motors/Group_Motor_Info
+/motors/Motor_Control
+/motors/Group_Motor_control
 ...
 }}}
 Note the two motor information topics available: "`Motor_Info`" and "`Group_Motor_Info`". Both of these publish the same information, just in a different way. The "`Motor_Info`" topic will publish each `MotorInfo` message separately, while "`Group_Motor_Info`" adds each `MotorInfo` message to a variable length array and publishes them together. The "`Group_Motor_Info`" is most useful with Odometry, when a subscribing callback needs to know each motors position or velocity at a single call rather than in multiple ones. 
