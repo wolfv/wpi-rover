@@ -19,9 +19,9 @@ The EPOS uses an FTDI chip to communicate between the computer and the micro-con
 
  # `roscd EposManager/libs`
  # `sudo cp libftd2xx.so.0.4.16 /usr/local/lib`
+ # `sudo ln -s /usr/local/lib/libftd2xx.so.0.4.16 /usr/local/lib/libftd2xx.so.0`
+ # `sudo ln -s /usr/local/lib/libftd2xx.so.0.4.16 /usr/lib/libftd2xx.so.0`
  # `sudo cp 99-ftdi.rules /etc/udev/rules.d`
- # `sudo cp libftd2xx.so.0  /usr/local/lib`
- # `sudo cp libftd2xx.so.0  /usr/lib`
  # `sudo /etc/init.d/udev restart`
 
 === Linking the EPOS Library ===
