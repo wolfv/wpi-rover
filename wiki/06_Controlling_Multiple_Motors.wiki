@@ -1,0 +1,27 @@
+#summary Writing a program to control multiple motors
+
+= Controlling Multiple Motors =
+
+Once you have gotten EposManager to work with one motor, it is extremely easy to get it to work with multiple motors. Here, we will show you how to control and read information from multiple motors in a single EPOS chain.
+
+== Parameter File == 
+Make a new parameter file, lets call it MyOtherEpos.yaml, in the params directory. If you are using the same motor, it can have the same parameters, otherwise, fill it in with what you need. Change the Node_ID to 2, and the Motor_Name to Other_Motor.
+
+== Launch File == 
+Create a second launch file named "MultipleMotorTest.launch" in the launch directory. Copy and paster the below code into it.
+
+{{{
+<launch>
+        <rosparam command="load" file="$(find epos_tutorials)/params/MyEpos.yaml" ns="motors/MyEpos" />
+		<rosparam command="load" file="$(find epos_tutorials)/params/MyOtherEpos.yaml" ns="motors/MyOtherEpos" />
+
+        <node name="NewEpos" pkg="EposManager" type="EposManager"  ns="motors" output="screen" args="MyEpos MyOtherEpos" >
+                <param name="Protocol" value="USB" />
+                <param name="Port" value="USB0" />
+                <param name="Publish_Rate" value="10" />
+        </node>
+</launch>
+}}}
+
+== The Program ==
+Now its time to start writing a program to control multiple motors. 
