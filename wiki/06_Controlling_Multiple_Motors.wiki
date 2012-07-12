@@ -37,16 +37,15 @@ Now its time to start writing a program to control multiple motors.  Below is so
 ros::Publisher groupDrivePublisher;
 
 void motorInfoCallback(const EposManager::GroupMotorInfo::ConstPtr& msg){
-vector<EposManager::MotorInfo> motor_group;
-		motor_group = msg->motor_group;
-		for(int i=0; i< motor_group.size();i++){
-            ROS_INFO_STREAM("Node ID: " << motor_group[i].node_id);
-			ROS_INFO_STREAM("Motor Name: " << motor_group[i].motor_name);
-			ROS_INFO_STREAM("Motor Current: " << motor_group[i].motor_current);
-			ROS_INFO_STREAM("Motor Position: " << motor_group[i].motor_position);
-			ROS_INFO_STREAM("Motor Velocity: " << motor_group[i].motor_velocity);
-		}
-
+  vector<EposManager::MotorInfo> motor_group;
+  motor_group = msg->motor_group;
+  for(int i=0; i< motor_group.size();i++){
+   ROS_INFO_STREAM("Node ID: " << motor_group[i].node_id);
+   ROS_INFO_STREAM("Motor Name: " << motor_group[i].motor_name);
+   ROS_INFO_STREAM("Motor Current: " << motor_group[i].motor_current);
+   ROS_INFO_STREAM("Motor Position: " << motor_group[i].motor_position);
+   ROS_INFO_STREAM("Motor Velocity: " << motor_group[i].motor_velocity);
+  }
 }
 
 void sendVelocityMessage(int motorOneVelocity, int motorTwoVelocity){
