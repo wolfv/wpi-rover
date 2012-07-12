@@ -24,4 +24,55 @@ Create a second launch file named "MultipleMotorTest.launch" in the launch direc
 }}}
 
 == The Program ==
-Now its time to start writing a program to control multiple motors. 
+Now its time to start writing a program to control multiple motors.  Below is some sample source code for sending information to and receiving information from multiple EPOS controllers in a chain.
+
+{{{
+#include "ros/ros.h"
+#include <EposManager/EPOSControl.h>
+#include <EposManager/MotorInfo.h>
+#include <EposManager/GroupEPOSControl.h>
+#include <EposManager/GroupMotorInfo.h>
+#include <ros/console.h>
+
+ros::Publisher groupDrivePublisher;
+
+void motorInfoCallback(const EposManager::GroupMotorInfo::ConstPtr& msg){
+vector<EposManager::MotorInfo> motor_group;
+		motor_group = msg->motor_group;
+		for(int i=0; i< motor_group.size();i++){
+            ROS_INFO_STREAM("Node ID: " << motor_group[i].node_id);
+			ROS_INFO_STREAM("Motor Name: " << motor_group[i].motor_name);
+			ROS_INFO_STREAM("Motor Current: " << motor_group[i].motor_current);
+			ROS_INFO_STREAM("Motor Position: " << motor_group[i].motor_position);
+			ROS_INFO_STREAM("Motor Velocity: " << motor_group[i].motor_velocity);
+		}
+
+}
+
+void sendVelocityMessage(int motorOneVelocity, int motorTwoVelocity){
+  EposManager::GroupEPOSControl msg;
+  EposManager::EPOSControl motorOne, motorTwo;
+  motorOne.control_mode=EposManager::EPOSControl::VELOCITY;
+  motorTwo.control_mode=EposManager::EPOSControl::VELOCITY;
+  
+  motorOne.node_id = 1;
+  motorTwo.node_id = 2;
+  
+  motorOne.setpoint=motorOneVelocity;
+  motorTwo.setpoint=motorTwoVelocity;
+  
+  msg.motor_group.push_back(motorOne);
+  msg.motor_group.push_back(motorTwo);
+  groupDrivePublisher.publish(msg);
+}
+
+int main (int argc, char **argv){
+ ros::init(argc, argv, "EPOSTest");
+ ros::NodeHandle n;
+ ros::Subscriber motorInfoSubscriber = n.subscribe("motors/Group_Motor_Info", 1, motorInfoCallback);
+
+ grouoDrivePublisher = n.advertise<EposManager::GroupEPOSControl>("motors/Group_Motor_Control", 1);
+ ros::spin();
+}
+
+}}} 
