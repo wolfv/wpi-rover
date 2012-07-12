@@ -70,7 +70,7 @@ int main (int argc, char **argv){
  ros::NodeHandle n;
  ros::Subscriber motorInfoSubscriber = n.subscribe("motors/Group_Motor_Info", 1, motorInfoCallback);
 
- grouoDrivePublisher = n.advertise<EposManager::GroupEPOSControl>("motors/Group_Motor_Control", 1);
+ groupDrivePublisher = n.advertise<EposManager::GroupEPOSControl>("motors/Group_Motor_Control", 1);
  ros::spin();
 }
 
