@@ -38,4 +38,10 @@ Once the required libraries are installed, it can now be built. Simply open up a
 
 `rosmake EposManager`
 
+==Making Your Own Package==
+Navigate to your personal ros workspace and run the following:
+# `roscreate-pkg epos_tutorials roscpp EposManager`
+
+This will be the package where you will place all of your launch and parameter files.
+
 Now you should be ready to move on to our tutorials.
