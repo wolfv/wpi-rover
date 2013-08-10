@@ -2,8 +2,7 @@
 
 = Installing EposManager =
 
-`EposManager` is still actively being developed. While most of the changes are likely to be minor, we will add new features if they are requested. For this reason, `EposManager` must be installed from source.
-
+`EposManager` is still actively being developed. While most of the changes are likely to be minor, we will add new features if they are requested. For this reason, `EposManager` must be installed from source. It is also important to note that *EposManager will only work on a 32 bit OS*. I understand that this may be a huge inconvenience for you, but there is nothing that we can do about it. Unfortunately, Maxon's driver only works on 32 bit machines. We are talking with Maxon to see if they can write a 64 bit version of their Linux driver. We will let everyone know and update the code until we hear about a fix.
 == Checking out the Source Code ==
 
 You can checkout `EposManager` into a directory in your ROS_PACKAGE_PATH through the following command:
