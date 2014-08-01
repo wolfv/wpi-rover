@@ -217,10 +217,9 @@ int main(int argc, char** argv){
 	heartbeatAttempts=0;
 	errorCode=0;
 
+  numMotors = argc-3;
 
 	motors = new EPOS*[numMotors];
-
-	numMotors = argc-3;
 
 	ros::init(argc, argv, "motors");
 	ros::NodeHandle nh;
